@@ -1,0 +1,32 @@
+<div class="home-page">
+    <section class="welcome-board">
+        <h2 *ngIf="user$|async; else guest">Welcome {{(user$|async)?.name}} <span class="logout"
+                (click)="logOut()">[change
+                user]</span>
+        </h2>
+        <ng-template #guest>
+            <h2>Hello, guest</h2>
+        </ng-template>
+
+        <img src='../../../assets/img/bitcoin.png'>
+        <div *ngIf="user$|async; else login" class="home-dashboard">
+            <div class="user-balance">
+                <p class="headline">CURRENT BALANCE</p>
+                <p>BTC: <span class="gold">₿ {{(user$|async)?.coins}}</span></p>
+                <p *ngIf="(user$|async)?.coins!==null">USD: <span class="grey">
+                        {{(1/rate)*(user$|async)!.coins! | currency:'USD'}}</span></p>
+            </div>
+            <div class="rate">
+                <p class="headline">CURRENT BTC RATE</p>
+                <h3>{{(1 / rate)|currency:'USD'}}</h3>
+            </div>
+
+        </div>
+        <ng-template #login>
+            <h4>Please log in to enjoy our services</h4>
+            <button routerLink="/signup">Log in</button>
+        </ng-template>
+    </section>
+    <moves-list *ngIf="user$|async" title="Last 3 moves:" [moves]="(user$|async)!.moves.slice(0, 3)"
+        [isWithName]="true"></moves-list>
+</div>

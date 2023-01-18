@@ -1,0 +1,56 @@
+.transfer-fund {
+    background-color: rgba(0, 0, 0, 0.309);
+    width: 100%;
+    padding: 5px 20px 20px;
+    border-radius: 3px;
+    margin: 20px auto 0;
+
+    form {
+        // gap: 15px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+
+        input {
+            background-color: transparent; // rgba(255, 255, 255, 0.416);
+            // color: white;
+            border: solid white 1px;
+            // padding:0;
+            width: 200px;
+            max-width:100%;
+            // border-bottom: 1px solid white;
+
+        }
+
+        button {
+            margin: 0;
+            padding: 10px;
+            height: 40px;
+
+            // color: rgb(100, 238, 157);
+            // border-color: rgb(97, 239, 147);
+
+        }
+
+    }
+
+    @media(min-width:440px) {
+        padding-inline: 30px;
+        form {
+            flex-direction: row;
+            // padding-inline: 0;
+
+            input {
+                border-end-end-radius: 0;
+                border-start-end-radius: 0;
+            }
+
+            button {
+                border-end-start-radius: 0;
+                border-start-start-radius: 0;
+            }
+        }
+    }
+}

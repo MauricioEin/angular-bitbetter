@@ -1,0 +1,26 @@
+<section *ngIf="contact$|async" class="contact-details">
+    <div class="prev-next">
+        <button routerLink="/contact/{{prevId}}">Previous</button>
+        <button routerLink="/contact/{{nextId}}">Next</button>
+    </div>
+    <div class="data-and-transfer">
+        <div class="contact-data">
+            <div class="img-container">
+                <div class="initials">{{(contact$|async)!.name|initials:3}}</div>
+                <div class="edit-btn" routerLink="/contact/{{(contact$|async)?._id}}/edit"><img
+                        src="../../../assets/img/edit.svg"></div>
+            </div>
+            <p class="c-name"> {{(contact$|async)?.name}}</p>
+            <p> {{(contact$|async)?.phone}}</p>
+            <p> {{(contact$|async)?.email}}</p>
+        </div>
+        <transfer-fund [contact]="contact!" [maxCoins]="(user$|async)!.coins"
+            (transfer)="transferCoins($event)"></transfer-fund>
+    </div>
+    <div class="transactions">
+        <moves-list [moves]="(user$|async)!.moves.filter(filterMoves)"
+            [title]="'Moves to ' + contact!.name.split(' ')[0]"></moves-list>
+    </div>
+</section>
+
+<router-outlet></router-outlet>

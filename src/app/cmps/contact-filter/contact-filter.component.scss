@@ -1,0 +1,20 @@
+:host {
+    flex-basis: 100%;
+    @media (min-width:740px) {
+        flex-basis:35vw;
+    }
+
+    form {
+        width: 100%;
+
+        input {
+            width: 100%;
+            padding: 10px 15px;
+            text-align: start;
+            height: 42px;
+            border: solid 1px rgb(173, 173, 173);
+            color: rgb(220, 220, 220);
+
+        }
+    }
+}

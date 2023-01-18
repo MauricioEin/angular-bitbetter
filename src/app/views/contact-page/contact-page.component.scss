@@ -1,0 +1,31 @@
+.add-and-filter{
+    display: flex;
+    gap:10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items:flex-end;
+    height: fit-content;
+    .for-wide{display: none;}
+    .for-narrow{
+        font-size: 2em;
+        height:40px;
+        width:45px !important;
+        padding-block:0;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        // padding-bottom: 5px;
+        // line-height: 0;
+        
+    }
+
+    @media (min-width:740px){
+        .for-narrow{
+            display: none;
+        }
+        .for-wide{
+            display: inline;
+        }
+    }
+
+}

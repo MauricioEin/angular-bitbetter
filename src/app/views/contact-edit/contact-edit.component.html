@@ -1,0 +1,19 @@
+<section class="contact-edit">
+<p class="close" (click)="onClose()">x</p>
+<div class="initials" *ngIf="contact._id">{{contact.name|initials:3}}</div>
+<!-- <img *ngIf="contact._id" src="https://robohash.org/{{contact._id}}?set=set5" alt=""> -->
+    <h2>{{contact._id?'Edit':'Add'}} Contact</h2>
+
+    <form #form [formGroup]="editContactForm" (ngSubmit)="onSaveContact()">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" id="name" placeholder="Contact's name" />
+
+        <label for="name">Phone</label>
+        <input type="text" formControlName="phone" id="phone" placeholder="Contact's phone" />
+
+        <label for="name">Email</label>
+        <input type="email" formControlName="email" id="email" placeholder="Contact's email" />
+        <button [disabled]="editContactForm.invalid">Save</button>
+    </form>
+    <h6 *ngIf="contact._id" (click)="onDeleteContact()">delete contact</h6>
+</section>
