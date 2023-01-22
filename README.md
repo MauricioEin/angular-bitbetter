@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://mauricioein.github.io/assets/img/bitcoin.png"width="30px"> Bit Better <img src="https://mauricioein.github.io/assets/img/bitcoin.png"width="30px"></h1>
 
-<p align="center">Deployed to GitHub Pages: https://mauricioein.github.io/</p>
+<p align="center">Deployed to GitHub Pages: https://mauricioein.github.io/angular-bitbetter/</p>
 
 <p align="center"><img align="center" height="400px" src="https://res.cloudinary.com/casep22/image/upload/v1674070317/bitbetter_sw8bcc.png"></p>
 
